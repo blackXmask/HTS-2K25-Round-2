@@ -6,7 +6,7 @@ app.secret_key = os.environ.get('SESSION_SECRET', 'hts2k25-blackxmask-secret-key
 
 users_db = {
     1: {"username": "john_doe", "role": "user", "email": "john@rivertown.com", "flag": "FLAG{1D0R_BR34CH_C0MPL3T3}"},
-    2: {"username": "admin", "role": "admin", "email": "admin@rivertown.com", "flag": "FLAG{ADM1N_PR0F1L3_H4CK3D}"},
+    17: {"username": "admin", "role": "admin", "email": "admin@rivertown.com", "flag": "FLAG{ADM1N_PR0F1L3_H4CK3D}"},
     3: {"username": "guest", "role": "user", "email": "guest@rivertown.com", "flag": "FLAG{GU3ST_ACC3SS_GR4NT3D}"}
 }
 
