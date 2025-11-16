@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTS-2K25 - Operation: Broken Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="glitch" data-text="HTS-2K25">HTS-2K25</h1>
+            <p class="subtitle">Operation: Broken Web</p>
+            <p class="subtitle" style="font-size: 0.9em; margin-top: 10px;">by BlackXmask Cyber Division</p>
+        </div>
+
+        <div class="mission-brief">
+            <h2>> MISSION BRIEFING</h2>
+            <p><strong>CLASSIFIED - LEVEL ALPHA</strong></p>
+            <p>Welcome, Agent.</p>
+            <p>Our intel shows that <strong>BlackHaze</strong>, a rogue hacker, has infiltrated Rivertown's web command system. He left 4 vulnerable entry points across the platform.</p>
+            
+            <h3 style="color: #ffd700; margin-top: 20px; margin-bottom: 15px;">YOUR MISSION:</h3>
+            <ul>
+                <li>Exploit vulnerabilities</li>
+                <li>Breach the locked modules</li>
+                <li>Capture the hidden flags</li>
+                <li>Restore system integrity</li>
+            </ul>
+            
+            <p style="margin-top: 20px; color: #ff4444; font-weight: bold;">This is not a warm-up — this is war.</p>
+        </div>
+
+        <h2 style="text-align: center; margin-bottom: 30px; color: #00ff41; text-shadow: 0 0 10px #00ff41;">YOUR TARGETS</h2>
+
+        <div class="challenges-grid">
+            <a href="/challenge/idor" class="challenge-card idor">
+                <h3>🟦 IDOR Breach</h3>
+                <p>Access the restricted user profile and extract the hidden token.</p>
+                <p style="margin-top: 15px; font-size: 0.9em; color: #888;">Difficulty: ★★☆☆</p>
+            </a>
+
+            <a href="/challenge/xss" class="challenge-card xss">
+                <h3>🟩 XSS Exploitation</h3>
+                <p>Trigger forced redirection by injecting JavaScript payloads.</p>
+                <p style="margin-top: 15px; font-size: 0.9em; color: #888;">Difficulty: ★★☆☆</p>
+            </a>
+
+            <a href="/challenge/sqli" class="challenge-card sqli">
+                <h3>🟥 SQLi Firewall Bypass</h3>
+                <p>Break the login by manipulating SQL queries.</p>
+                <p style="margin-top: 15px; font-size: 0.9em; color: #888;">Difficulty: ★★★☆</p>
+            </a>
+
+            <a href="/challenge/admin" class="challenge-card admin">
+                <h3>🟪 Admin Panel Takeover</h3>
+                <p>Locate and access the hidden administrator portal.</p>
+                <p style="margin-top: 15px; font-size: 0.9em; color: #888;">Difficulty: ★★★★</p>
+            </a>
+        </div>
+
+        <div class="mission-brief">
+            <h2>> RULES OF ENGAGEMENT</h2>
+            <ul>
+                <li>Do not attack other teams</li>
+                <li>Only attack the provided environment</li>
+                <li>No automated scanners (Burp is allowed)</li>
+                <li>Flags format: <code style="color: #ffd700;">FLAG{SOMETHING_HERE}</code></li>
+                <li>Submit all flags before time ends</li>
+                <li>Teams with highest number of flags qualify to Round 3</li>
+            </ul>
+            
+            <p style="margin-top: 25px; text-align: center; font-size: 1.2em; color: #ffd700;">
+                <strong>GOAL:</strong> Hack all 4 modules → Collect 4 flags → Save Rivertown
+            </p>
+            <p style="text-align: center; margin-top: 15px; color: #ff4444;">
+                Can you outsmart BlackHaze?
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>BlackXmask Cyber Division © 2025</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">HTS-2K25 Round 2 - Web Security Arena</p>
+        </div>
+    </div>
+</body>
+</html>

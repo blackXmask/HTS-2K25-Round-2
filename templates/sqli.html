@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection Challenge - HTS-2K25</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="glitch" data-text="SQL INJECTION">SQL INJECTION</h1>
+            <p class="subtitle">Firewall Bypass Module</p>
+        </div>
+
+        <div class="terminal-box">
+            <h2>> CHALLENGE DESCRIPTION</h2>
+            <p>The admin login panel controls access to critical system resources.</p>
+            <p>Your mission: Bypass the authentication system to gain unauthorized access and retrieve the flag.</p>
+            <p style="margin-top: 15px; color: #ff4444;">ALERT: Database queries may be improperly sanitized.</p>
+        </div>
+
+        <div class="terminal-box">
+            <h2>> ADMIN LOGIN PANEL</h2>
+            <form method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit" class="btn">Attempt Login</button>
+            </form>
+        </div>
+
+        {% if error %}
+        <div class="terminal-box error">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+
+        {% if success %}
+        <div class="terminal-box success">
+            <p>{{ success|safe }}</p>
+        </div>
+        {% endif %}
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="/" class="btn">← Return to Command Center</a>
+        </div>
+    </div>
+</body>
+</html>

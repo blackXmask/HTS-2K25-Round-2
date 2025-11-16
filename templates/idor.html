@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDOR Challenge - HTS-2K25</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="glitch" data-text="IDOR BREACH">IDOR BREACH</h1>
+            <p class="subtitle">Insecure Direct Object Reference</p>
+        </div>
+
+        <div class="terminal-box">
+            <h2>> CHALLENGE DESCRIPTION</h2>
+            <p>The system allows users to view their profile information.</p>
+            <p>Your mission: Find a way to access restricted data and capture the flag.</p>
+            <p style="margin-top: 15px; color: #ff4444;">STATUS: High-value targets detected in system database.</p>
+        </div>
+
+        {% if error %}
+        <div class="terminal-box error">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+
+        {% if user %}
+        <div class="user-card">
+            <h3>USER PROFILE</h3>
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Role:</strong> {{ user.role }}</p>
+            
+            {% if user.role == 'admin' %}
+            <div class="flag-reveal">
+                {{ user.flag }}
+            </div>
+            {% else %}
+            <p style="margin-top: 15px; color: #888;">Standard user account. No elevated privileges.</p>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="/" class="btn">← Return to Command Center</a>
+        </div>
+    </div>
+</body>
+</html>

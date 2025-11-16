@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Challenge - HTS-2K25</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="glitch" data-text="XSS EXPLOITATION">XSS EXPLOITATION</h1>
+            <p class="subtitle">Cross-Site Scripting Attack</p>
+        </div>
+
+        <div class="terminal-box">
+            <h2>> CHALLENGE DESCRIPTION</h2>
+            <p>BlackHaze left a vulnerable search module in the system.</p>
+            <p>Your mission: Exploit the vulnerability to execute malicious code and reveal the flag.</p>
+            <p style="margin-top: 15px; color: #ff4444;">WARNING: Input validation mechanisms may be compromised.</p>
+        </div>
+
+        <div class="terminal-box">
+            <h2>> SEARCH MODULE</h2>
+            <form method="POST">
+                <input type="text" name="search" placeholder="Enter search query..." required>
+                <button type="submit" class="btn">Execute Search</button>
+            </form>
+        </div>
+
+        {% if result %}
+        <div class="terminal-box">
+            <h2>> SEARCH RESULTS</h2>
+            <div style="padding: 15px; background: rgba(0,0,0,0.5); border-radius: 5px;">
+                {{ result|safe }}
+            </div>
+        </div>
+        {% endif %}
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="/" class="btn">← Return to Command Center</a>
+        </div>
+    </div>
+</body>
+</html>
